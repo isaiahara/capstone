@@ -5,17 +5,35 @@ import 'package:child_roster/screens/Toddler1.dart';
 import 'package:child_roster/screens/Toddler2.dart';
 import 'package:child_roster/screens/WaitingList.dart';
 import 'package:flutter/material.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 
-void main() => runApp(MaterialApp(
-      title: 'stp',
-      home: HomeScreen(),
-    ));
+// @override
+// Widget build(BuildContext context) {
+//   return AnimatedSplashScreen(
+//     splash: 'images/splash.png',
+//     nextScreen: HomeScreen(),
+//     splashTransition: SplashTransition.rotationTransition,
+//   );
+// }
+
+void main() => runApp(MyApp());
+
+
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      home: Drawer(),
+      debugShowCheckedModeBanner: false,
+      home: AnimatedSplashScreen(
+        splash: Image.asset(
+        'assets/images/PolkaDot.png'),
+        nextScreen: HomeScreen(),
+        splashTransition: SplashTransition.slideTransition,
+        backgroundColor: Colors.pinkAccent,
+        
+
+      ),
     );
   }
 }
@@ -65,12 +83,46 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   )),
-              CustomListTile(Icons.person, 'Waiting List', () => Navigator.push(context, new MaterialPageRoute(builder: (context) => new WaitingList()))),
-              CustomListTile(Icons.person, 'Infants 0-12 Months', () => Navigator.push(context, new MaterialPageRoute(builder: (context) => new Infants()))),
-              CustomListTile(Icons.person, 'Toddler 1 12-24 Months', () => Navigator.push(context, new MaterialPageRoute(builder: (context) => new Toddler1()))),
-              CustomListTile(Icons.person, 'Toddler 2 24-36 Months', () => Navigator.push(context, new MaterialPageRoute(builder: (context) => new Toddler2()))),
-              CustomListTile(Icons.person, 'Pre -K 3-5yrs', () => Navigator.push(context, new MaterialPageRoute(builder: (context) => new PreK()))),
-              CustomListTile(Icons.person, 'School Kids 5-12yrs', () => Navigator.push(context, new MaterialPageRoute(builder: (context) => new SchoolKids()))),
+              CustomListTile(
+                  Icons.person,
+                  'Waiting List',
+                  () => Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                          builder: (context) => new WaitingList()))),
+              CustomListTile(
+                  Icons.person,
+                  'Infants 0-12 Months',
+                  () => Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                          builder: (context) => new Infants()))),
+              CustomListTile(
+                  Icons.person,
+                  'Toddler 1 12-24 Months',
+                  () => Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                          builder: (context) => new Toddler1()))),
+              CustomListTile(
+                  Icons.person,
+                  'Toddler 2 24-36 Months',
+                  () => Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                          builder: (context) => new Toddler2()))),
+              CustomListTile(
+                  Icons.person,
+                  'Pre -K 3-5yrs',
+                  () => Navigator.push(context,
+                      new MaterialPageRoute(builder: (context) => new PreK()))),
+              CustomListTile(
+                  Icons.person,
+                  'School Kids 5-12yrs',
+                  () => Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                          builder: (context) => new SchoolKids()))),
             ],
           ),
         ));
