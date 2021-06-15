@@ -4,8 +4,10 @@ import 'package:child_roster/screens/SchoolKids.dart';
 import 'package:child_roster/screens/Toddler1.dart';
 import 'package:child_roster/screens/Toddler2.dart';
 import 'package:child_roster/screens/WaitingList.dart';
+import 'package:child_roster/widgets/ChildInputField.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'widgets/ExpansionList.dart';
 
 // @override
 // Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
       home: AnimatedSplashScreen(
         splash: Image.asset(
         'assets/images/PolkaDot.png'),
-        nextScreen: HomeScreen(),
+        nextScreen: ExpansionList(),
         splashTransition: SplashTransition.slideTransition,
         backgroundColor: Colors.pinkAccent,
         
