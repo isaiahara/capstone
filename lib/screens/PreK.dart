@@ -6,7 +6,7 @@ class PreK extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('Pre -K'),
+        title: new Text('Pre '),
       ),
       body: new Text('pre k body'),
     );
