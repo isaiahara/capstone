@@ -1,3 +1,5 @@
+
+import 'package:child_roster/widgets/Input.dart';
 import 'package:flutter/material.dart';
 // import 'package:lib/main.dart';
 
@@ -7,9 +9,10 @@ class WaitingList extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('Toddler 2'),
+        backgroundColor: Colors.blueGrey,
+        title: new Text('Waiting List'),
       ),
-      body: new Text('waiting list body'),
+      body: Input(),
     );
   }
 }

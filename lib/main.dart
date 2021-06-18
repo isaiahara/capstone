@@ -4,10 +4,11 @@ import 'package:child_roster/screens/SchoolKids.dart';
 import 'package:child_roster/screens/Toddler1.dart';
 import 'package:child_roster/screens/Toddler2.dart';
 import 'package:child_roster/screens/WaitingList.dart';
-import 'package:child_roster/widgets/ChildInputField.dart';
+// import 'package:child_roster/screens/WaitingList.dart';
+// import 'package:child_roster/widgets/ChildInputField.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'widgets/ExpansionList.dart';
+// import 'widgets/ExpansionList.dart';
 
 // @override
 // Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       home: AnimatedSplashScreen(
         splash: Image.asset(
         'assets/images/PolkaDot.png'),
-        nextScreen: ExpansionList(),
+        nextScreen: HomeScreen(),
         splashTransition: SplashTransition.slideTransition,
         backgroundColor: Colors.pinkAccent,
         
@@ -39,14 +40,29 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
+// backgroundColor: Colors.black
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+        return Scaffold(
+          backgroundColor: Colors.black,
+         body: Container (
+           decoration: BoxDecoration(
+             image: DecorationImage(
+               image: AssetImage('assets/images/bumbleBee.gif'),
+               fit: BoxFit.cover,
+              //  colorFilter: ColorFilter.mode(
+              //    Colors.red.withOpacity(0.5),
+              //    BlendMode.darken)
+              )
+            )
+          ),
+          // backgroundColor: Colors.black,
+          // backgroundImage: AssetImage('assets/images/bumbleBee.gif')),
+        
         appBar: AppBar(
           title: Text('Stepping Stones'),
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.grey[700],
         ),
         drawer: Drawer(
           child: ListView(
@@ -54,8 +70,8 @@ class HomeScreen extends StatelessWidget {
               DrawerHeader(
                   decoration: BoxDecoration(
                     gradient: LinearGradient(colors: <Color>[
-                      Colors.red.shade900,
-                      Colors.pink.shade300
+                      Colors.black87,
+                      Colors.grey[600]
                     ]),
                   ),
                   child: Container(
@@ -70,7 +86,7 @@ class HomeScreen extends StatelessWidget {
                             child: CircleAvatar(
                               backgroundColor: Colors.white,
                               backgroundImage: AssetImage(
-                                  'assets/images/mickeyAndMinnie.png'),
+                                  'assets/images/MickeyMinnie.png'),
                             ),
                           ),
                         ),
@@ -86,40 +102,42 @@ class HomeScreen extends StatelessWidget {
                     ),
                   )),
               CustomListTile(
-                  Icons.person,
+                  Icons.pregnant_woman_rounded,
                   'Waiting List',
-                  () => Navigator.push(
+                  () => Navigator.pop(
                       context,
                       new MaterialPageRoute(
                           builder: (context) => new WaitingList()))),
               CustomListTile(
-                  Icons.person,
+                  Icons.child_friendly_rounded,
                   'Infants 0-12 Months',
                   () => Navigator.push(
                       context,
                       new MaterialPageRoute(
                           builder: (context) => new Infants()))),
               CustomListTile(
-                  Icons.person,
+                  Icons.baby_changing_station_rounded,
                   'Toddler 1 12-24 Months',
                   () => Navigator.push(
                       context,
                       new MaterialPageRoute(
                           builder: (context) => new Toddler1()))),
               CustomListTile(
-                  Icons.person,
+                  Icons.palette_sharp,
                   'Toddler 2 24-36 Months',
                   () => Navigator.push(
                       context,
                       new MaterialPageRoute(
                           builder: (context) => new Toddler2()))),
               CustomListTile(
-                  Icons.person,
+                  Icons.create_sharp,
                   'Pre -K 3-5yrs',
                   () => Navigator.push(context,
                       new MaterialPageRoute(builder: (context) => new PreK()))),
               CustomListTile(
-                  Icons.person,
+              
+                  Icons.airport_shuttle_rounded,
+                  
                   'School Kids 5-12yrs',
                   () => Navigator.push(
                       context,
@@ -176,3 +194,4 @@ class CustomListTile extends StatelessWidget {
     );
   }
 }
+

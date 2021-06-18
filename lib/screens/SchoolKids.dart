@@ -1,3 +1,4 @@
+import 'package:child_roster/widgets/Input.dart';
 import 'package:flutter/material.dart';
 
 
@@ -6,9 +7,10 @@ class SchoolKids extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
+        backgroundColor: Colors.blueGrey,
         title: new Text('School Kids'),
       ),
-      body: new Text('school kids body'),
+      body: Input(),
     );
   }
 }

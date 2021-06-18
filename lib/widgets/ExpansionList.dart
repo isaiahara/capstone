@@ -1,24 +1,33 @@
-import 'package:child_roster/widgets/ChildInputField.dart';
-import 'package:flutter/material.dart';
+// basic page to pass andrews code file ChildInputField
+
+// import 'package:child_roster/widgets/ChildInputField.dart';
+// import 'package:flutter/material.dart';
 
 
-class ExpansionList extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Expansion List widget file'),
-      ),
-      body: MyCustomForm(),
+// class ExpansionList extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return new Scaffold(
+//       appBar: new AppBar(
+//         title: new Text('Expansion List widget file'),
+//       ),
+//       body: MyCustomForm(),
       
-    );
-  }
-}
+//     );
+//   }
+// }
 
 
 
 
 
+
+
+
+// 2 seperate codes
+
+
+                          // input field code not finished
 // import 'package:child_roster/widgets/ChildInputField.dart';
 
 // import 'package:flutter/material.dart';
